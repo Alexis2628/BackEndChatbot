@@ -1,4 +1,4 @@
-FROM python:3.11-slim
+FROM python:3.11
 
 # Set working directory
 WORKDIR /app
@@ -24,8 +24,6 @@ RUN uv pip install -e .
 
 # Copy application code
 COPY src ./src
-COPY alembic ./alembic
-COPY alembic.ini ./
 
 # Create necessary directories
 RUN mkdir -p /app/data /app/logs
